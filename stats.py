@@ -21,7 +21,7 @@ def get_stats():
     fh = os.popen("df -H / | tail -n 1")
     match = re.search(r'(\d+)%', fh.read())
     if match:
-        disk = 100 - int(match.groups()[0])
+        disk = int(match.groups()[0])
     else:
         disk = 0
 
